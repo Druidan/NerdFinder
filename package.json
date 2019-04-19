@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "A friend finder that focuses on helping you find a nerd friend that shares your interests.",
   "main": "server.js",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.16.4"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
