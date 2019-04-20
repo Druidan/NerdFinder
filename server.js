@@ -3,8 +3,6 @@ const express = require("express");
 
 // Create an Express server
 const app = express();
-
-// Establish an initial port.
 const PORT = process.env.PORT || 3010;
 
 // St6andard Express setup for data parsing

@@ -7,10 +7,10 @@
         <meta charset="UTF-8" lang="en-us">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Nerd Friend Finder Survey</title>
-        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="app/public/css/normalize.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="css/nffStyle.css">
+        <link rel="stylesheet" type="text/css" href="app/public/css/nffStyle.css">
         <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Indie+Flower|Montserrat+Alternates|Philosopher" rel="stylesheet">
     </head>
     <body class="newBody">
@@ -18,13 +18,32 @@
         <div class="homeCorner">
             <a href="https://Druidan.github.io/index.html"><i class="fas headMenu fa-home"></i></a>
         </div>
-        <header class="elcHeader">
-            <h1 class="elcName">Edward L. Cheever II</h1>
-            <p class="elcsubTitle">Web Developer</p>
+        <header class="titleDiv">
+            <h1 class="titleNFF">Nerd Friend Finder Survey</h1>
+            <p class="subTitleNFF">Fill in the blanks below and then rate the following statements by indicating how much you agree with them on a scale of 1 to 5.</p>
         </header>
         <main>
-            
+            <section class="aboutSection">
+                <h3 class="aboutYou">About You</h3>
+                <h4 class="inputTitle yourName">Name (required)</h4>
+                <input type="text" class="formBox name-input" required>
+                <h4 class="inputTitle yourPic">Link to Your Photo (required)</h4>
+                <input type="text" class="formBox pic-link-input" required>
+            </section>
+            <section class="surveyDiv">
+
+            </section>
+            <section class="submitDiv">
+                <button type="submit" class="submitSurvBtn">Submit</button>
+            </section>
         </main>
-    <script type="text/javascript" src="../../nerdFriendFinderCore.js"></script>
+        <div class="bestMatchModal">
+            <h2>Best Match!</h2>
+            <img src="" class="bmImage" alt="Profile Image">
+            <h3 class="bmName">Best Name Placeholder!</h3>
+        </div>
+    <script type="text/javascript" src="../../node_modules/dompurify/dist/purify.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="../../survey.js"></script>
     </body>
 </html>

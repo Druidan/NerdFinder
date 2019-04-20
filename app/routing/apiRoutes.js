@@ -1,7 +1,12 @@
 //Establish Dependancies
 const nerdFriends = require(`../data/nerdFriends`)
+const surveyQs = require(`../data/surveyQs`)
 
 module.exports = function(app) {
+
+    app.get("/api/surveyQs", function(req, res) {
+        res.json(surveyQs); //Display the nerd friends data when visiting the api in JSON format.
+    });
 
     //We creater the get request handler for our nerd friends api.
     app.get("/api/nerdFriends", function(req, res) {
@@ -9,10 +14,8 @@ module.exports = function(app) {
     });
 
     app.post("/api/nerdFriends", function(req, res) {
-        // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
-        // It will do this by sending out the value "true" have a table
-        // req.body is available since we're using the body parsing middleware
         nerdFriends.push(req.body);
+        res.json(true);
     });
 
 }

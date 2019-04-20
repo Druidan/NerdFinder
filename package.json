@@ -4,6 +4,7 @@
   "description": "A friend finder that focuses on helping you find a nerd friend that shares your interests.",
   "main": "server.js",
   "dependencies": {
+    "dompurify": "^1.0.10",
     "express": "^4.16.4"
   },
   "devDependencies": {},
