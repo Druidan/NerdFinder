@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
     //Grab HTML Elements
     const surveyDiv = document.querySelectorAll(`.surveyDiv`);
     const surveySubmitBtn = document.querySelectorAll(`.submitSurvBtn`);
+    const gliderDiv = document.querySelectorAll(`.glide__slides`);
+    const glideArrows = document.querySelectorAll(`.glide__arrows`);
+    const bestMatchesDiv = document.querySelectorAll(`.bestMatchModal`);
 
     function buildQs() {
         axios.get(`/api/surveyQs`).then(surveyQs => {
@@ -35,12 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 const cleanSelector = DOMPurify.sanitize(dirtySelector);
                 newQ.className = `qDiv q${numQs}Div`;
                 qTextHeader.className = `qHead`;
-                qTextHeader.textContent = `Question ${numQs}`;
+                qTextHeader.textContent = `Statement ${numQs}`;
                 newQ.appendChild(qTextHeader);
                 qContent.className = `qContent`;
                 qContent.textContent = qText;
                 newQ.appendChild(qContent);
                 dropMenu.innerHTML = cleanSelector;
+                dropMenu.className = `dropMenuBox`;
                 newQ.appendChild(dropMenu);
                 surveyDiv.forEach(elem => {
                     elem.appendChild(newQ);
@@ -105,18 +109,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         axios.get(`/api/nerdFriends`).then(response => {
             const nerds = response.data
-            console.log(nerds)
             nerds.forEach(nerd => {
-                console.log(nerd.name)
-                console.log(thisUserName)
                 let diffTotal = 0;
                 i = 0;
                 if (nerd.name !== thisUserName) {
                     nerd.scores.forEach(score => {
-                        diffTotal = diffTotal + (score + thisUserArr[i]);
+                        let diff = score - thisUserArr[i]
+                        if(diff <=0 ){
+                            diff = diff*(-1);
+                        }
+                        diffTotal = diffTotal + diff;
                         i++
                     })
-                    console.log(diffTotal)
                     if (diffTotal < largestDiff) {
                         largestDiff = diffTotal
                         matches = [];
@@ -126,9 +130,65 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
             })
-            console.log(matches)
+            buildMatchesModal(matches);
         })
     }
+
+    function buildMatchesModal(arr) {
+        let i = 0;
+        arr.forEach( match => {
+            i++
+            const newMatch = document.createElement(`li`);
+            const dirtyMatchHTML = `
+            <div class="bMatches bMatch${i}">
+                <img src="${match.photo}" class="bmImage bmImg${i}" alt="Match ${i} Profile Image"></img>
+                <h3 class="bmName">${match.name}</h3> 
+            </div>`
+            const cleanMatchHTML = DOMPurify.sanitize(dirtyMatchHTML);
+            newMatch.innerHTML = cleanMatchHTML;
+            newMatch.className = `glide_slide`
+            gliderDiv.forEach(div => {
+                div.appendChild(newMatch);
+            })
+        })
+        new Glide('.glide').mount()
+        bestMatchesDiv.forEach(div => {
+            if(hasClass(div, `buryIt`)) {
+                removeClass(div, `buryIt`)
+            }
+        });
+        gliderDiv.forEach(div => {
+            div.style.width = `100%`;
+        });
+        if(matches.length <= 2) {
+            glideArrows.forEach(arrow => {
+                addClass(arrow, `buryIt`);
+            })
+        }
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0; 
+    }
+
+    function hasClass(el, className) {
+        if (el.classList)
+            return el.classList.contains(className)
+        else
+            return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'))
+        }
+    function addClass(el, className) {
+        if (el.classList)
+            el.classList.add(className)
+        else if (!hasClass(el, className)) el.className += " " + className
+        }
+    function removeClass(el, className) {
+            if (el.classList)
+            el.classList.remove(className)
+        else if (hasClass(el, className)) {
+            var reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
+            el.className=el.className.replace(reg, ' ')
+        }
+    }
+
 
     //My JS Ends beyond this point.
 });

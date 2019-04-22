@@ -1,19 +1,45 @@
 
 const nerdFriends = [
     {
-        name:`Ahmed`,
-        photo:`https://m.media-amazon.com/images/M/MV5BMGVmNjhlYzQtNmQ3ZS00MWFjLWI1ZWEtZjc5MWZjYjUyMmM5XkEyXkFqcGdeQXVyNTc3MjUzNTI@._V1_UY317_CR175,0,214,317_AL_.jpg`,
+        name:`Chad Bro`,
+        photo:`/app/data/images/ChadBro.jpg`,
+        scores:[
+            1,
+            3,
+            3,
+            1,
+            3,
+            1,
+            1,
+            3,
+            1,
+            1,
+            1,
+            1,
+            3,
+            3,
+            1
+        ]
+    },
+    {
+        name:`William "The Dark Lord Ki'en'thri'stion" Jones`,
+        photo:`/app/data/images/FantasyDude.jpg`,
         scores:[
             5,
+            5,
+            3,
+            5,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
             1,
-            4,
-            4,
+            1,
             5,
             1,
-            2,
-            5,
-            4,
-            1
+            4
         ]
     },
 ]

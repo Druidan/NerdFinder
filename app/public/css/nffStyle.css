@@ -1,0 +1,393 @@
+/* CORE ROOT, DOM, AND GENERAL UTILITY CSS */
+
+:root{
+    --primary:  rgba(8, 13, 28, 1);
+    --secondary:  rgba(27, 46, 63, 1);
+    --tertiary: rgba(94, 94, 94, 1);
+    --highlight: rgba(43, 74, 86, 1);
+    --fontStandardColor: rgba(196, 255, 240, 1);;
+    --headerFont: 'Arvo', serif;
+    --standardFontFamily: 'Open Sans', sans-serif;
+}
+
+body {
+    background:url(../../data/images/NerdBackground2.png);
+    -webkit-animation:500s scroll infinite linear;
+    -moz-animation:500s scroll infinite linear;
+    -o-animation:500s scroll infinite linear;
+    -ms-animation:500s scroll infinite linear;
+    animation:500s scroll infinite linear;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    font-family: var(--standardFontFamily);
+    color: var(--fontStandardColor);
+    font-size: 2vw;
+}
+
+h1, h2, h3, h4, h5, h6, ul, li, p {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--headerFont);
+}
+
+a:link {
+    color: var(--tertiary);
+}
+
+a:visited{
+    color: var(--highlight);
+}
+
+a:active{
+    color: var(--highlight);
+}
+
+.buryIt{
+    display: none !important;
+}
+
+/* 
+-------------------------
+Background and Body CSS
+------------------------- 
+*/
+
+.newBody {
+    display: grid;
+    padding-top: 20px;
+    width: 100vw;
+    grid-gap: 10px;
+    grid-template-columns: auto repeat(4, 1fr) auto;
+    grid-template-areas: 
+    "home   title   title   title   title   exit"
+    ".  main    main    main    main    ."
+}
+
+/* 
+-------------------------
+Header CSS
+------------------------- 
+*/
+
+.homeCorner {
+    grid-area: home;
+    padding-top: 20px;
+    padding-left: 20%;
+    text-align: left !important;
+    font-size: 3vw;
+}
+
+.exitCorner {
+    grid-area: exit;
+    padding-top: 20px;
+    padding-right: 20%;
+    text-align: right !important;
+    font-size: 3vw;
+    /* transform: rotate(180deg); */
+
+}
+
+.fas:hover {
+    border-radius: 50%;
+    background-color: var(--fontStandardColor);
+    -webkit-box-shadow: 0px 0px 8px 8px var(--fontStandardColor);
+    -moz-box-shadow: 0px 0px 8px 8px var(--fontStandardColor);
+    box-shadow: 0px 0px 8px 8px var(--fontStandardColor);
+}
+
+.titleDiv {
+    grid-area: title;
+    text-align: center;
+    padding: 2%;
+    background-color: var(--secondary);
+    border: 5px solid var(--tertiary);
+    border-radius: 20px;
+}
+
+.titleNFF {
+    color: var(--primary);
+    text-shadow: -2px 0 2px var(--fontStandardColor), 0 2px 2px var(--fontStandardColor), 2px 0 2px var(--fontStandardColor), 0 -2px 2px var(--fontStandardColor);
+}
+
+.subTitleNFF {
+    margin-top: 2%;
+}
+
+
+/* 
+-------------------------
+Main Content CSS
+------------------------- 
+*/
+
+.mainContent {
+    grid-area: main; 
+    padding: 20px;
+}
+
+.mainHome {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+}
+
+.mainSurvey {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+}
+
+.aboutSection {
+    display: grid;
+    grid-gap: 10px;
+    padding: 2%;
+    background-color: var(--primary);
+    border: 5px solid var(--secondary);
+    border-radius: 20px;
+}
+
+.aboutYou {
+    text-align: center;
+}
+
+.formBox {
+    color: var(--primary);
+    font-weight: 800;
+    font-family: var(--standardFontFamily);
+}
+
+.surveyDiv {
+    display: grid;
+    grid-gap: 20px;
+}
+
+.qDiv {
+    display: grid;
+    grid-gap: 10px;
+    padding: 2%;
+    background-color: var(--secondary);
+    border: 5px solid var(--tertiary);
+    border-radius: 20px;
+}
+
+.qHead {
+    text-align: center;
+}
+
+.qContent {
+    text-align: center;
+}
+
+.dropMenuBox {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dropMenu {
+    color: var(--fontStandardColor);
+    background-color: var(--primary);
+    font-family: var(--standardFontFamily);
+    font-weight: 800; 
+    padding: 5px;
+    cursor: pointer;
+}
+
+.dropMenu:focus:focus-within {
+    background-color: var(--highlight);
+    cursor: pointer;
+}
+
+.submitDiv {
+    text-align: center;
+}
+
+.submitSurvBtn {
+    font-family: var(--headerFont);
+    font-size: 5vw;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: var(--secondary);
+    color: var(--primary);
+    text-shadow: -2px 0 2px var(--fontStandardColor), 0 2px 2px var(--fontStandardColor), 2px 0 2px var(--fontStandardColor), 0 -2px 2px var(--fontStandardColor);
+    border: 5px solid var(--tertiary);
+    border-radius: 40px;
+}
+
+
+/* 
+-------------------------
+Best Match Modal CSS
+------------------------- 
+*/
+
+.bestMatchModal {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+    width: 50%;
+    overflow: auto;
+    position: absolute;
+    padding: 2%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    padding: 2%;
+    background-color: var(--secondary);
+    border: 5px solid var(--tertiary);
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 8px 8px var(--fontStandardColor);
+    -moz-box-shadow: 0px 0px 8px 8px var(--fontStandardColor);
+    box-shadow: 0px 0px 8px 8px var(--fontStandardColor);
+}
+
+.glide {
+    width: 50vw !important
+}
+
+.glide_slide {
+    width: 50% !important;
+    justify-content: center;
+    display: inline-flex;
+}
+
+.glide__arrow {
+    margin: 2%;
+}
+
+.bMatches {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.bmImage {
+    max-width:100%;
+}
+
+.bmName {
+    width: 90%;
+    overflow: auto;
+}
+
+@media screen and (min-width: 300px) {
+
+body {
+    font-size: 4.5vw;
+}
+
+}
+
+@media screen and (min-width: 450px) {
+
+    body {
+        font-size: 4.2vw;
+    }
+    
+}
+
+@media screen and (min-width: 550px) {
+
+    body {
+        font-size: 3.8vw;
+    }
+    
+}
+
+@media screen and (min-width: 650px) {
+
+    body {
+        font-size: 3.2vw;
+    }
+    
+}
+
+@media screen and (min-width: 750px) {
+
+    .newBody {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+
+    body {
+        font-size: 2.2vw;
+    }
+    
+}
+
+@media screen and (min-width: 900px) {
+
+    body {
+        font-size: 1.8vw;
+    }
+    
+}
+
+@media screen and (min-width: 1000px) {
+
+    body {
+        font-size: 1.7vw;
+    }
+    
+}
+
+@media screen and (min-width: 1100px) {
+
+    body {
+        font-size: 1.5vw;
+    }
+    
+}
+
+@media screen and (min-width: 1400px) {
+
+    body {
+        font-size: 1.5vw;
+    }
+    
+}
+
+
+/* Background Animation */
+@-webkit-keyframes scroll{
+    100%{
+        background-position:0px -3000px;
+    }
+}
+
+@-moz-keyframes scroll{
+    100% {
+        background-position: 0px -3000px;
+    }
+}
+
+@-o-keyframes scroll {
+    100% {
+        background-position: 0px -3000px;
+    }
+}
+
+@-ms-keyframes scroll {
+    100% {
+        background-position: 0px -3000px;
+    }
+}
+
+@keyframes scroll {
+    100% {
+        background-position: 0px -3000px;
+    }
+}

@@ -10,8 +10,9 @@
         <link rel="stylesheet" type="text/css" href="app/public/css/normalize.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
         <link rel="stylesheet" type="text/css" href="app/public/css/nffStyle.css">
-        <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Indie+Flower|Montserrat+Alternates|Philosopher" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Arvo|Open+Sans:300" rel="stylesheet">    
     </head>
     <body class="newBody">
         <!-- Header -->
@@ -22,9 +23,12 @@
             <h1 class="titleNFF">Nerd Friend Finder Survey</h1>
             <p class="subTitleNFF">Fill in the blanks below and then rate the following statements by indicating how much you agree with them on a scale of 1 to 5.</p>
         </header>
-        <main>
+        <div class="exitCorner">
+            <a href="./"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+        <main class="mainContent mainSurvey">
             <section class="aboutSection">
-                <h3 class="aboutYou">About You</h3>
+                <h2 class="aboutYou">About You</h2>
                 <h4 class="inputTitle yourName">Name (required)</h4>
                 <input type="text" class="formBox name-input" required>
                 <h4 class="inputTitle yourPic">Link to Your Photo (required)</h4>
@@ -37,12 +41,22 @@
                 <button type="submit" class="submitSurvBtn">Submit</button>
             </section>
         </main>
-        <div class="bestMatchModal">
-            <h2>Best Match!</h2>
-            <img src="" class="bmImage" alt="Profile Image">
-            <h3 class="bmName">Best Name Placeholder!</h3>
+        <div class="bestMatchModal buryIt">
+            <h2 class="bestMatchTitle">Your Best Matches!</h2>
+            <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                    </ul>
+                </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+                </div>
+            </div>
+            <button class="retakeBtn" onClick="window.location.reload()">Retake Survey</button>
         </div>
     <script type="text/javascript" src="../../node_modules/dompurify/dist/purify.min.js"></script>
+    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="../../survey.js"></script>
     </body>

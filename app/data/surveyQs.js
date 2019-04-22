@@ -1,33 +1,48 @@
 const surveyQs = [
     {
-        question: `1.) [Sample Text]`,
+        question: `Cosplay is really freaking cool!`,
     },
     {
-        question: `2.) [Sample Text]`,
+        question: `You're honestly not sure why you're taking this survey right now instead of playing a videogame.`,
     },
     {
-        question: `3.) [Sample Text]`,
+        question: `DC is way better than Marvel.`,
     },
     {
-        question: `4.) [Sample Text]`,
+        question: `You either get hyped or terrified when you hear the words "Roll for initiative."`,
     },
     {
-        question: `5.) [Sample Text]`,
+        question: `Subs are life. Dubs are trash.`,
     },
     {
-        question: `6.) [Sample Text]`,
+        question: `You know which Star Trek Captain is the best and you are SO ready to throw down over it.`,
     },
     {
-        question: `7.) [Sample Text]`,
+        question: `You have strong opions over over who would win in a fight between Superman and Goku.`,
     },
     {
-        question: `8.) [Sample Text]`,
+        question: `Between old school and new school Dr. Who, you would choose old school every time.`,
     },
     {
-        question: `9.) [Sample Text]`,
+        question: `You long for the days when it took 10 floppy discs to install a videogame.`,
     },
     {
-        question: `10.) [Sample Text]`,
+        question: `You know exactly how good or bad each Star Wars movie is, and people who disagree with your assessment are getting their tires slashed, I mean... you didn't hear that, okay?`,
+    },
+    {
+        question: `You fought in the console wars.`,
+    },
+    {
+        question: `You can explain with passion, at length, why a particular coding library and/or language(s) suck.`,
+    },
+    {
+        question: `Lord of the Rings is the best fantasy book series ever commited to the page. Period. End of statement.`,
+    },
+    {
+        question: `You've been running the numbers of this survey through some equations and you're pretty sure my methodology is flawed.`,
+    },
+    {
+        question: `You are upset that [insert your favorite nerd thing] isn't mentioned anywhere in this survey, and that its full of mainstream stereotypical fluff.`,
     },
 ]
 
