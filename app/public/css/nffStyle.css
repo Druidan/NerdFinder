@@ -77,19 +77,20 @@ Header CSS
 .homeCorner {
     grid-area: home;
     padding-top: 20px;
-    padding-left: 20%;
+    padding-left: 5vw;
+    padding-right: 2vw;
     text-align: left !important;
-    font-size: 3vw;
+    font-size: 5vw;
 }
 
 .exitCorner {
     grid-area: exit;
     padding-top: 20px;
-    padding-right: 20%;
+    padding-right: 5vw;
+    padding-left: 2vw;
     text-align: right !important;
-    font-size: 3vw;
+    font-size: 5vw;
     /* transform: rotate(180deg); */
-
 }
 
 .fas:hover {
@@ -118,10 +119,9 @@ Header CSS
     margin-top: 2%;
 }
 
-
 /* 
 -------------------------
-Main Content CSS
+Global Content CSS
 ------------------------- 
 */
 
@@ -130,11 +130,52 @@ Main Content CSS
     padding: 20px;
 }
 
+/* 
+-------------------------
+Home Content CSS
+------------------------- 
+*/
+
 .mainHome {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 1fr;
 }
+
+.welcomeNFF {
+    text-align: center;
+}
+
+.welcomeText {
+    margin-top: 3%;
+    text-indent: 1in;
+}
+
+.startSurvDiv {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 3%;
+}
+
+.surveyBtn {
+    font-family: var(--headerFont);
+    font-size: 3vw;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: var(--secondary);
+    color: var(--primary);
+    text-shadow: -2px 0 2px var(--fontStandardColor), 0 2px 2px var(--fontStandardColor), 2px 0 2px var(--fontStandardColor), 0 -2px 2px var(--fontStandardColor);
+    border: 5px solid var(--tertiary);
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+/* 
+-------------------------
+Survey Content CSS
+------------------------- 
+*/
 
 .mainSurvey {
     display: grid;
@@ -210,7 +251,7 @@ Main Content CSS
 
 .submitSurvBtn {
     font-family: var(--headerFont);
-    font-size: 5vw;
+    font-size: 3vw;
     font-weight: bold;
     padding: 10px 20px;
     background-color: var(--secondary);
@@ -235,9 +276,8 @@ Best Match Modal CSS
     overflow: auto;
     position: absolute;
     padding: 2%;
-    top: 0;
+    top: 10vw;
     right: 0;
-    bottom: 0;
     left: 0;
     margin: auto;
     text-align: center;
@@ -255,7 +295,7 @@ Best Match Modal CSS
 }
 
 .glide_slide {
-    width: 50% !important;
+    width: 100% !important;
     justify-content: center;
     display: inline-flex;
 }
@@ -269,6 +309,7 @@ Best Match Modal CSS
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
+    width: 50% !important;
 }
 
 .bmImage {
@@ -278,6 +319,8 @@ Best Match Modal CSS
 .bmName {
     width: 90%;
     overflow: auto;
+    margin-top: 3%;
+    padding: 5px;
 }
 
 @media screen and (min-width: 300px) {
