@@ -12,8 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //Grab HTML Elements
     const surveyDiv = document.querySelectorAll(`.surveyDiv`);
     const surveySubmitBtn = document.querySelectorAll(`.submitSurvBtn`);
-    const gliderDiv = document.querySelectorAll(`.glide__slides`);
-    const glideArrows = document.querySelectorAll(`.glide__arrows`);
+    const bestMatchTitle = document.querySelectorAll(`.bestMatchTitle`);
     const bestMatchesDiv = document.querySelectorAll(`.bestMatchModal`);
 
     function buildQs() {
@@ -138,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let i = 0;
         arr.forEach( match => {
             i++
-            const newMatch = document.createElement(`li`);
+            const newMatch = document.createElement(`div`);
             const dirtyMatchHTML = `
             <div class="bMatches bMatch${i}">
                 <img src="${match.photo}" class="bmImage bmImg${i}" alt="Match ${i} Profile Image"></img>
@@ -146,25 +145,25 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>`
             const cleanMatchHTML = DOMPurify.sanitize(dirtyMatchHTML);
             newMatch.innerHTML = cleanMatchHTML;
-            newMatch.className = `glide_slide`
-            gliderDiv.forEach(div => {
+            // newMatch.className = `glide_slide`
+            bestMatchTitle.forEach(div => {
                 div.appendChild(newMatch);
             })
         })
-        new Glide('.glide').mount()
+        // new Glide('.glide').mount()
         bestMatchesDiv.forEach(div => {
             if(hasClass(div, `buryIt`)) {
                 removeClass(div, `buryIt`)
             }
         });
-        gliderDiv.forEach(div => {
-            div.style.width = `100%`;
-        });
-        if(matches.length <= 2) {
-            glideArrows.forEach(arrow => {
-                addClass(arrow, `buryIt`);
-            })
-        }
+        // gliderDiv.forEach(div => {
+        //     div.style.width = `100%`;
+        // });
+        // if(matches.length <= 2) {
+        //     glideArrows.forEach(arrow => {
+        //         addClass(arrow, `buryIt`);
+        //     })
+        // }
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0; 
         largestDiff = numQs * 4

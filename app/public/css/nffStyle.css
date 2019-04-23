@@ -273,7 +273,8 @@ Best Match Modal CSS
     grid-gap: 10px;
     grid-template-columns: 1fr;
     width: 50%;
-    overflow: auto;
+    height: 75%;
+    overflow: scroll;
     position: absolute;
     padding: 2%;
     top: 10vw;
@@ -290,35 +291,33 @@ Best Match Modal CSS
     box-shadow: 0px 0px 8px 8px var(--fontStandardColor);
 }
 
-.glide {
-    width: 50vw !important
-}
-
-.glide_slide {
-    width: 100% !important;
-    justify-content: center;
-    display: inline-flex;
-}
-
-.glide__arrow {
-    margin: 2%;
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    outline: 1px solid var(--secondary);
 }
 
 .bMatches {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: center;
-    width: 50% !important;
+    justify-content: space-around;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
 }
 
 .bmImage {
     max-width:100%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .bmName {
-    width: 90%;
-    overflow: auto;
+    width: 95%;
     margin-top: 3%;
     padding: 5px;
 }
